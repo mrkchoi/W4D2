@@ -1,0 +1,12 @@
+<!-- 
+  CAT INDEX PAGE
+-->
+
+<h1>These are all the cats!!!!!!!!!!!!!!!!!!!!!!</h1>
+
+<% @cats.each do |cat| %>
+  <div>
+  <%= link_to(cat.name, cat_url(cat)) %>
+  </div>
+<% end %>
+
