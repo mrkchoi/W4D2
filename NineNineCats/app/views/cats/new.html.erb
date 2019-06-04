@@ -1,2 +1,36 @@
 <h1>I can haz cats?</h1>
 
+<form action="<%= cats_url %>" method="POST">
+
+  <label>Name
+    <input type="text" name="cat[name]">
+  </label>
+
+  <br><br>
+
+  <label>Sex
+    <input type="radio" name="cat[sex]" value="M"> M
+    <input type="radio" name="cat[sex]" value="F"> F
+  </label>
+
+  <br><br>
+
+  <select name="cat[color]">
+    <option value="" disabled selected>--SELECT A COLOR--</option>
+
+    <% Cat::COLORS.each do |color| %>
+      <option value="<%= color %>"><%= color %></option>
+    <% end %>
+  </select>
+
+  <br><br>
+
+  <input type="date" name="cat[birth_date]">
+
+  <br><br>
+
+  <label>Description<br>
+    <textarea name="cat[description]" cols="30" rows="10"></textarea>
+  </label>
+
+</form>
