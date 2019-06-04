@@ -23,6 +23,5 @@ class Cat < ApplicationRecord
   def age
     DateTime.now.year - self.birth_date.year
   end
-
-
 end
+

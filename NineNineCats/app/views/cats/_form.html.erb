@@ -1,0 +1,54 @@
+<!-- 
+  CAT FORM PARTIAL
+-->
+
+<% if type == :edit %>
+  <% action_url = cat_url(cat) %>
+<% else %>
+  <% action_url = cats_url %>
+<% end %>
+
+<form action="<%= action_url %>" method="POST">
+  <% if type == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <label>Name
+    <input type="text" name="cat[name]" value="<%= cat.name %>">
+  </label>
+
+  <br><br>
+
+  <label>Sex
+    <input type="radio" name="cat[sex]" value="M" <%= cat.sex == 'M' ? 'CHECKED' : "" %>> M
+    <input type="radio" name="cat[sex]" value="F" <%= cat.sex == 'F' ? 'CHECKED' : "" %>> F
+  </label>
+
+  
+
+  <br><br>
+
+  <select name="cat[color]">
+    <option value="" disabled selected>--SELECT A COLOR--</option>
+
+    <% Cat::COLORS.each do |color| %>
+      <option value="<%= color %>" <%= color == cat.color ? "SELECTED" : "" %>>
+        <%= color %>
+      </option>
+    <% end %>
+  </select>
+
+  <br><br>
+
+  <input type="date" name="cat[birth_date]" value="<%= cat.birth_date %>">
+
+  <br><br>
+
+  <label>Description<br>
+    <textarea name="cat[description]" cols="30" rows="10"><%= cat.description %></textarea>
+  </label>
+
+</form>
+
+
+

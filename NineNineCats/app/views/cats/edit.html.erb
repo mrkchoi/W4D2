@@ -1,45 +1,11 @@
+<!-- 
+  CAT EDIT PAGE
+-->
+
+
+
 <h1>I can updatez cats?</h1>
 
-<form action="<%= cat_url(@cat) %>" method="POST">
-  <input type="hidden" name="_method" value="PATCH">
-
-  <label>Name
-    <input type="text" name="cat[name]" value="<%= @cat.name %>">
-  </label>
-
-  <br><br>
-
-  <label>Sex
-    <input type="radio" name="cat[sex]" value="M" <%= @cat.sex = 'M' ? 'CHECKED' : "" %>> M
-    <input type="radio" name="cat[sex]" value="F" <%= @cat.sex = 'F' ? 'CHECKED' : "" %>> F
-  </label>
-
-
-
-
-  <br><br>
-
-  <select name="cat[color]">
-    <option value="" disabled selected>--SELECT A COLOR--</option>
-
-    <% Cat::COLORS.each do |color| %>
-      <option value="<%= color %>" <%= color == @cat.color ? "SELECTED" : "" %>>
-        <%= color %>
-      </option>
-    <% end %>
-  </select>
-
-  <br><br>
-
-  <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>">
-
-  <br><br>
-
-  <label>Description<br>
-    <textarea name="cat[description]" cols="30" rows="10"><%= @cat.description %></textarea>
-  </label>
-
-</form>
-
+<%= render 'form', cat: @cat, type: :edit %>
 
 
