@@ -13,7 +13,14 @@
 
   <body>
     <div class="ui container">
-      <h1>99 Cats</h1>
+      <h1>
+        <%= link_to '99 Cats', cats_url %>
+      </h1>
+
+      <div class="ui divider"></div>
+      <%= link_to 'New cat', new_cat_url, class: 'ui button basic green' %>
+      <br><br>
+      
       <%= yield %>
     </div>
   </body>

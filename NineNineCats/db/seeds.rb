@@ -18,6 +18,13 @@ ActiveRecord::Base.transaction do
   20.times do
     Cat.create(name: Faker::Creature::Cat.name, birth_date: Faker::Date.birthday(18, 65), color: COLORS.sample, sex: SEX.sample, description: Faker::Hipster.paragraph)
   end
+
+  # CatRentalRequest.destroy_all
+  
+  # CatRentalRequest.create(cat_id: Cat.all[0].id, start_date: '2019/04/01', end_date: '2019/04/14')
+  # CatRentalRequest.create(cat_id: Cat.all[0].id, start_date: '2019/04/15', end_date: '2019/04/30')
+  # CatRentalRequest.create(cat_id: Cat.all[0].id, start_date: '2019/04/25', end_date: '2019/05/14')
+  
 end
 
 

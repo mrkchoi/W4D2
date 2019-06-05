@@ -36,3 +36,10 @@
     <%= @cat.description %>
   </p>
 </div>
+
+<br><br>
+
+<div>
+  <%= link_to '< All catz', cats_url, class: 'ui button' %>
+  <%= link_to 'Edit catz >', edit_cat_url(@cat), class: 'ui button'%>
+</div>
